@@ -1,0 +1,26 @@
+[
+    {
+        "command": "echo \"Welcome to the Shell Emulator!\""
+    },
+    {
+        "command": "ls"
+    },
+    {
+        "command": "ls"
+    },
+    {
+        "command": "cd dir1"
+    },
+    {
+        "command": "ls"
+    },
+    {
+        "command": "chown users file1.txt"
+    },
+    {
+        "command": "history "
+    },
+    {
+        "command": "exit"
+    }
+]

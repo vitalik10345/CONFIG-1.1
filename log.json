@@ -1,0 +1,14 @@
+[
+    {
+        "command": "echo \"Welcome to the Shell Emulator!\""
+    },
+    {
+        "command": "ls"
+    },
+    {
+        "command": "cd virtual_fs"
+    },
+    {
+        "command": "exit "
+    }
+]
