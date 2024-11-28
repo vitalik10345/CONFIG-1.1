@@ -354,29 +354,59 @@ startup_script = startup.sh
 - `log_file`: Путь к JSON-файлу, где записываются действия пользователя. Лог-файл сохраняет историю команд и другие действия в формате JSON.
 - `startup_script`: Путь к стартовому скрипту для выполнения начального набора команд. Позволяет автоматически выполнять команды при запуске эмулятора, например, для настройки среды или предварительного перехода в определенный каталог.
 
+#### Файл `startup.sh`:
+```startup.sh
+echo "Welcome to the Shell Emulator!"
+ls
+```
+
 ## 5. Примеры использования
 
 ### Запуск эмулятора:
 
 ```python
-python shell_emulator.py config.ini
+python shell_emulator.py test_config.ini
 
 ```
 ### Использование команд
 #### 1. Использование команды `ls`:
-![image](https://github.com/user-attachments/assets/bd7b2be1-934d-4e3a-b473-2bb86b459143)
+![image](https://github.com/user-attachments/assets/d94918d1-8a07-4b97-a033-961186566ea5)
 
 #### 2. Использование команды `cd`:
-![image](https://github.com/user-attachments/assets/dd45f77f-1064-477a-b3ad-8855ed71a217)
+![image](https://github.com/user-attachments/assets/b13525cf-6927-4c23-b1f9-814ad561f9d2)
 
 #### 3. Использование команды `chown`:
-![image](https://github.com/user-attachments/assets/3409aa8d-dcce-4d0e-828d-3626c1e0ce8f)
+![image](https://github.com/user-attachments/assets/8f4cf62b-9078-4f9d-bc6e-a4a9123e2a23)
 
 #### 4. Использование команды `history`:
-![image](https://github.com/user-attachments/assets/4c474a85-a65c-45d9-8926-9d8c63c7c8b5)
+![image](https://github.com/user-attachments/assets/c6fa8f03-bbfd-43f7-a2fb-f88ba60c6f9d)
 
-#### 5. Использование команды `exit`:
-![image](https://github.com/user-attachments/assets/ad663e42-5023-41ec-ae37-aef48c68ea96)
+
+
+
+
+
+## 6. Результаты тестирования
+
+### Запуск тестов:
+
+```python
+python -m pytest test_shell_emulator.py
+
+```
+![image](https://github.com/user-attachments/assets/6e5907de-66b1-41aa-b71a-89095fb973a8)
+
+Покрытие тестов:
+- **Тесты для `VirtualFileSystem`**:
+
+- `test_list_directory_root`: Проверяет корректность вывода команды `ls` в корневом каталоге.
+- `test_change_directory`: Проверяет переход в существующий каталог и обновление текущего пути.
+- **Тесты для `ShellEmulator`**:
+
+- `test_cd_command`: Проверяет выполнение команды `cd` и изменение текущего пути.
+- `test_ls_command`: Проверяет выполнение команды `ls` и правильность отображения содержимого каталога.
+- `test_chown_command`: Проверяет выполнение команды `chown` и изменение владельца файла.
+- `test_history_command`: Проверяет выполнение команды `history` и корректное отображение истории команд.
 
 
 
